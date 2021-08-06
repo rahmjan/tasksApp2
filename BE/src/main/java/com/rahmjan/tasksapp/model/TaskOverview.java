@@ -6,5 +6,6 @@ public interface TaskOverview {
 
     UUID getUuid();
     String getName();
+    String getShortDescription();
 
 }

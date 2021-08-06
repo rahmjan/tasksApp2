@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TaskRepository extends CrudRepository<TaskEntity, UUID> {
     
-    @Query("select te from TaskEntity te")
+    @Query("select te.uuid as uuid, te.name as name, SUBSTRING(te.description, 1, 20) as shortDescription from TaskEntity te")
     List<TaskOverview> getTasksOverview();
 
 }

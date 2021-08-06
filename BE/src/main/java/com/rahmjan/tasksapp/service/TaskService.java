@@ -1,6 +1,8 @@
 package com.rahmjan.tasksapp.service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import com.rahmjan.tasksapp.entity.TaskEntity;
 import com.rahmjan.tasksapp.model.TaskOverview;
@@ -22,6 +24,10 @@ public class TaskService {
 
     public List<TaskOverview> getTasksOverview() {
         return taskRepository.getTasksOverview();
+    }
+
+    public Optional<TaskEntity> getTask(UUID uuid) {
+        return taskRepository.findById(uuid);
     }
     
 }
